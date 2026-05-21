@@ -1,6 +1,14 @@
 # Serpiente
 
-Serpiente allows you to write and run Python scripts using localized keywords and built-ins. It currently supports **Spanish (`.esp`)** and **French (`.frp`)** out of the box.
+Serpiente allows you to write and run Python scripts using localized keywords and built-ins. It currently supports **Spanish (`.esp`)**, **French (`.frp`)**, and **Kinyarwanda (`.rwp`)** out of the box.
+
+## Using
+Files with the supported language extensions will automatically resolve themselves into normal python. This means that you are able to use imports between languages and use regular python syntax all in the same file. Examples of this are shown in the [examples](./examples/) directory.
+
+Once you've installed the `serpiente CLI` (described below) and optionally the VS Code extension, you can run any supported file using,
+```bash
+serpiente <scriptName>
+```
 
 ## Installation
 

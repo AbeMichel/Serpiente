@@ -25,11 +25,13 @@ class SerpienteFinder(importlib.abc.MetaPathFinder):
         self.extensions_map = extensions_map
 
     def find_spec(self, fullname, path, target=None):
-        if path is None or path == "":
-            path = [os.getcwd()]
+        if path is None:
+            search_path = sys.path
+        else:
+            search_path = path
 
         basename = fullname.split(".")[-1]
-        for entry in path:
+        for entry in search_path:
             for ext, mapping in self.extensions_map.items():
                 filename = f"{basename}{ext}"
                 filepath = os.path.join(entry, filename)
