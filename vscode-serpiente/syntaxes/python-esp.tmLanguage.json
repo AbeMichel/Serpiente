@@ -1,0 +1,57 @@
+{
+    "scopeName": "source.python-esp",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#builtins"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.python",
+                    "match": "\\b(falso|ninguno|verdadero|y|como|afirmar|asincrono|esperar|romper|clase|continuar|definir|borrar|sino_si|sino|excepto|finalmente|para|desde|si|importar|en|es|local|no|o|pasar|levantar|retornar|intentar|mientras|con|producir)\\b"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.python",
+                    "match": "\\b(imprimir|entrada|rango|longitud|tipo|lista|diccionario|conjunto|tupla|entero|flotante|cadena|booleano|abrir|enumerar|comprimir|mapa|filtrar|ordenar|revertir|suma|minimo|maximo|absoluto|redondear|potencia|dividir|todos|alguno|obtener_attr|establecer_attr|tiene_attr|borrar_attr|iterador|siguiente|objeto|ayuda|ejecutar|evaluar|compilar|estatico|propiedad|instancia_de|subclase_de|notimplementado|elipsis|depurar|Excepcion|ExcepcionBase|ErrorDeAritm\u00e9tica|ErrorDeAtributo|ErrorDeImportacion|ErrorDeIndice|ErrorDeClave|ErrorDeMemoria|ErrorDeNombre|ErrorDeNotImplemented|ErrorDeOS|ErrorDeDesbordamiento|ErrorDeRecursion|ErrorDeReferencia|ErrorDeRuntime|ErrorDeSintaxis|ErrorDeSistema|ErrorDeTipo|ErrorDeValor|ErrorDeZero|ErrorDeUnicode|ErrorDeIO|ErrorDePermiso|ErrorDeArchivo|Interrupcion|SalidaDelSistema|Advertencia|AdvertenciaDeDepreciacion)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.python",
+                    "begin": "\"",
+                    "end": "\""
+                },
+                {
+                    "name": "string.quoted.single.python",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.python",
+                    "match": "#.*$"
+                }
+            ]
+        }
+    }
+}

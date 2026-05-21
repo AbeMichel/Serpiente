@@ -1,0 +1,3 @@
+
+definir hola():
+    imprimir("Hola")

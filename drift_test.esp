@@ -1,0 +1,2 @@
+importar sys
+imprimir(1 y (1/0))

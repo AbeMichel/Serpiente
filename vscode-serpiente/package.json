@@ -1,0 +1,64 @@
+{
+    "name": "serpiente",
+    "displayName": "Serpiente",
+    "description": "Localized Python support (Spanish and more)",
+    "version": "0.1.0",
+    "publisher": "serpiente",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/serpiente"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "python-frp",
+                "aliases": [
+                    "Python (frp)"
+                ],
+                "extensions": [
+                    ".frp"
+                ],
+                "configuration": "./language-configurations/python-frp.json"
+            },
+            {
+                "id": "python-esp",
+                "aliases": [
+                    "Python (esp)"
+                ],
+                "extensions": [
+                    ".esp"
+                ],
+                "configuration": "./language-configurations/python-esp.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "python-frp",
+                "scopeName": "source.python-frp",
+                "path": "./syntaxes/python-frp.tmLanguage.json"
+            },
+            {
+                "language": "python-esp",
+                "scopeName": "source.python-esp",
+                "path": "./syntaxes/python-esp.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "python-frp",
+                "path": "./snippets/python-frp.json"
+            },
+            {
+                "language": "python-esp",
+                "path": "./snippets/python-esp.json"
+            }
+        ]
+    }
+}

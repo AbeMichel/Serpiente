@@ -1,0 +1,57 @@
+{
+    "scopeName": "source.python-frp",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#builtins"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.python",
+                    "match": "\\b(vrai|faux|aucun|et|ou|non|si|sinon|sinonsi|pour|tantque|definir|retourner|importer|en)\\b"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.python",
+                    "match": "\\b(afficher|rang)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.python",
+                    "begin": "\"",
+                    "end": "\""
+                },
+                {
+                    "name": "string.quoted.single.python",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.python",
+                    "match": "#.*$"
+                }
+            ]
+        }
+    }
+}

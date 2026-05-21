@@ -1,0 +1,87 @@
+{
+    "Serpiente True": {
+        "prefix": "vrai",
+        "body": "vrai",
+        "description": "Python True"
+    },
+    "Serpiente False": {
+        "prefix": "faux",
+        "body": "faux",
+        "description": "Python False"
+    },
+    "Serpiente None": {
+        "prefix": "aucun",
+        "body": "aucun",
+        "description": "Python None"
+    },
+    "Serpiente and": {
+        "prefix": "et",
+        "body": "et",
+        "description": "Python and"
+    },
+    "Serpiente or": {
+        "prefix": "ou",
+        "body": "ou",
+        "description": "Python or"
+    },
+    "Serpiente not": {
+        "prefix": "non",
+        "body": "non",
+        "description": "Python not"
+    },
+    "Serpiente if": {
+        "prefix": "si",
+        "body": "si ${1:condition}:\n\t${0:pass}",
+        "description": "If statement"
+    },
+    "Serpiente else": {
+        "prefix": "sinon",
+        "body": "sinon",
+        "description": "Python else"
+    },
+    "Serpiente elif": {
+        "prefix": "sinonsi",
+        "body": "sinonsi",
+        "description": "Python elif"
+    },
+    "Serpiente for": {
+        "prefix": "pour",
+        "body": "pour ${1:item} in ${2:iterable}:\n\t${0:pass}",
+        "description": "For loop"
+    },
+    "Serpiente while": {
+        "prefix": "tantque",
+        "body": "tantque ${1:condition}:\n\t${0:pass}",
+        "description": "While loop"
+    },
+    "Serpiente def": {
+        "prefix": "definir",
+        "body": "definir ${1:func_name}(${2:params}):\n\t${0:pass}",
+        "description": "Function definition"
+    },
+    "Serpiente return": {
+        "prefix": "retourner",
+        "body": "retourner",
+        "description": "Python return"
+    },
+    "Serpiente print": {
+        "prefix": "afficher",
+        "body": "afficher(${1})",
+        "description": "Built-in function print"
+    },
+    "Serpiente import": {
+        "prefix": "importer",
+        "body": "importer",
+        "description": "Python import"
+    },
+    "Serpiente in": {
+        "prefix": "en",
+        "body": "en",
+        "description": "Python in"
+    },
+    "Serpiente range": {
+        "prefix": "rang",
+        "body": "rang(${1})",
+        "description": "Built-in function range"
+    }
+}
