@@ -1,0 +1,1 @@
+python scripts\generate_vscode_ext.py && cd vscode-serpiente && vsce package && code --install-extension *.vsix --force

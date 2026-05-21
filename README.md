@@ -30,7 +30,7 @@ The VS Code extension uses a custom Language Server for Intellisense and Diagnos
 
 ```bash
 # Create and activate venv
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 
 # Install LSP dependencies
@@ -58,7 +58,7 @@ serpiente main.frp  # French
 Run the generator script to build the extension. This generates syntax highlighting, snippets, and the Language Server client:
 
 ```bash
-python3 scripts/generate_vscode_ext.py
+python scripts/generate_vscode_ext.py
 ```
 
 ### 2. Install Dependencies
@@ -70,19 +70,17 @@ npm install
 ```
 
 ### 3. Install the Extension
+Ensure `vsce` is installed.
+Ensure `code` is installed as a command. If not `Cmd/Ctrl+Shift+P` and search/select `Shell Command: Install 'code' command in PATH`.
 
-#### Method A: Manual (Recommended for development)
-Symlink the folder to your extensions directory:
-- **macOS/Linux:** `ln -s $(pwd)/vscode-serpiente ~/.vscode/extensions/vscode-serpiente`
-- **Windows (PowerShell):** `New-Item -ItemType SymbolicLink -Path "$HOME\.vscode\extensions\vscode-serpiente" -Target "$((Get-Item .).FullName)\vscode-serpiente"`
-
-#### Method B: VSIX (Recommended for sharing)
-If you have `vsce` installed:
+**Mac**
 ```bash
-cd vscode-serpiente
-vsce package
+sh generateExtension.sh
 ```
-Then install the resulting `.vsix` file in VS Code.
+**Windows**
+```bash
+generateExtension.bat
+```
 
 ## Updating
 
