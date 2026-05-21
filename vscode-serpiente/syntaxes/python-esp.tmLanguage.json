@@ -12,6 +12,9 @@
         },
         {
             "include": "#comments"
+        },
+        {
+            "include": "source.python"
         }
     ],
     "repository": {
@@ -19,7 +22,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.python",
-                    "match": "\\b(falso|ninguno|verdadero|y|como|afirmar|asincrono|esperar|romper|clase|continuar|definir|borrar|sino_si|sino|excepto|finalmente|para|desde|si|importar|en|es|local|no|o|pasar|levantar|retornar|intentar|mientras|con|producir)\\b"
+                    "match": "\\b(falso|ninguno|verdadero|y|como|afirmar|asincrono|esperar|romper|clase|continuar|definir|borrar|sino_si|sino|excepto|finalmente|para|desde|global|si|importar|en|es|lambda|local|no|o|pasar|levantar|retornar|intentar|mientras|con|producir)\\b"
                 }
             ]
         },
@@ -27,7 +30,7 @@
             "patterns": [
                 {
                     "name": "support.function.builtin.python",
-                    "match": "\\b(imprimir|entrada|rango|longitud|tipo|lista|diccionario|conjunto|tupla|entero|flotante|cadena|booleano|abrir|enumerar|comprimir|mapa|filtrar|ordenar|revertir|suma|minimo|maximo|absoluto|redondear|potencia|dividir|todos|alguno|obtener_attr|establecer_attr|tiene_attr|borrar_attr|iterador|siguiente|objeto|ayuda|ejecutar|evaluar|compilar|estatico|propiedad|instancia_de|subclase_de|notimplementado|elipsis|depurar|Excepcion|ExcepcionBase|ErrorDeAritm\u00e9tica|ErrorDeAtributo|ErrorDeImportacion|ErrorDeIndice|ErrorDeClave|ErrorDeMemoria|ErrorDeNombre|ErrorDeNotImplemented|ErrorDeOS|ErrorDeDesbordamiento|ErrorDeRecursion|ErrorDeReferencia|ErrorDeRuntime|ErrorDeSintaxis|ErrorDeSistema|ErrorDeTipo|ErrorDeValor|ErrorDeZero|ErrorDeUnicode|ErrorDeIO|ErrorDePermiso|ErrorDeArchivo|Interrupcion|SalidaDelSistema|Advertencia|AdvertenciaDeDepreciacion)\\b"
+                    "match": "\\b(absoluto|aiterador|todos|asiguiente|alguno|ascii|binario|punto_interrupcion|llamable|caracter|metodo_clase|compilar|borrar_attr|dir|divmod|enumerar|evaluar|ejecutar|salir|filtrar|formatear|obtener_attr|globales|tiene_attr|hash|ayuda|hexadecimal|id|entrada|instancia_de|subclase_de|iterador|longitud|locales|mapa|maximo|minimo|siguiente|octal|abrir|ord|potencia|imprimir|propiedad|quitar|rango|representacion|revertir|redondear|establecer_attr|rebanada|ordenar|estatico|suma|super|variables|comprimir|booleano|arreglo_bytes|bytes|complejo|diccionario|flotante|conjunto_congelado|entero|lista|vista_memoria|objeto|conjunto|cadena|tupla|tipo|elipsis|no_implementado|depurar|ErrorDeAritmetica|ErrorDeAfirmacion|ErrorDeAtributo|ExcepcionBase|GrupoDeExcepcionBase|ErrorDeIOBloqueante|ErrorDeTuberiaRota|ErrorDeBuffer|AdvertenciaDeBytes|ErrorDeProcesoHijo|ErrorDeConexionAbortada|ErrorDeConexion|ErrorDeConexionRechazada|ErrorDeConexionRestablecida|AdvertenciaDeDepreciacion|ErrorDeFinDeArchivo|AdvertenciaDeCodificacion|ErrorDeEntorno|Excepcion|GrupoDeExcepcion|ErrorDeArchivoExistente|ErrorDeArchivoNoEncontrado|ErrorDePuntoFlotante|AdvertenciaDeFuturo|SalidaDeGenerador|ErrorDeIO|ErrorDeImportacion|AdvertenciaDeImportacion|ErrorDeIndentacion|ErrorDeIndice|ErrorInterrumpido|ErrorDeEsDirectorio|ErrorDeClave|InterrupcionDeTeclado|ErrorDeBusqueda|ErrorDeMemoria|ErrorDeModuloNoEncontrado|ErrorDeNombre|ErrorDeNoEsDirectorio|ErrorDeNoImplementado|ErrorDeSO|ErrorDeDesbordamiento|AdvertenciaDeDepreciacionPendiente|ErrorDePermiso|ErrorDeBusquedaDeProceso|ErrorDeFinalizacionPython|ErrorDeRecursion|ErrorDeReferencia|AdvertenciaDeRecurso|ErrorDeEjecucion|AdvertenciaDeEjecucion|PararIteracionAsincrona|PararIteracion|ErrorDeSintaxis|AdvertenciaDeSintaxis|ErrorDeSistema|SalidaDelSistema|ErrorDeTabulacion|ErrorDeTiempoAgotado|ErrorDeTipo|ErrorDeNombreLocalNoEnlazado|ErrorDeDecodificacionUnicode|ErrorDeCodificacionUnicode|ErrorDeUnicode|ErrorDeTraduccionUnicode|AdvertenciaDeUnicode|AdvertenciaDeUsuario|ErrorDeValor|Advertencia|ErrorDeDivisionPorCero)\\b"
                 }
             ]
         },

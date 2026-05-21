@@ -1,0 +1,19 @@
+# Exemple isolé en Français
+definir factorielle(n):
+    si n == 0:
+        retourner 1
+    sinon:
+        retourner n * factorielle(n - 1)
+
+nombre = 5
+resultat = factorielle(nombre)
+afficher(f"La factorielle de {nombre} est {resultat}")
+
+courses = ["pommes", "bananes", "cerises"]
+pour fruit dans courses:
+    afficher(f"J'aime manger des {fruit}")
+
+si resultat > 100:
+    afficher("C'est un grand nombre !")
+sinon:
+    afficher("C'est un petit nombre.")

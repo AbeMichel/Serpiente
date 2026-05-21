@@ -1,0 +1,20 @@
+# Urugero ruri ukwayo mu Kinyarwanda
+rema kubara_inyuguti(amagambo_yinjijwe):
+    inkoranyamagambo_y_inyuguti = {}
+    kuri inyuguti mu amagambo_yinjijwe:
+        niba inyuguti mu inkoranyamagambo_y_inyuguti:
+            inkoranyamagambo_y_inyuguti[inyuguti] += 1
+        naho_ubundi:
+            inkoranyamagambo_y_inyuguti[inyuguti] = 1
+    garura inkoranyamagambo_y_inyuguti
+
+interuro = "serpiente ni nziza"
+ibyavuyemo = kubara_inyuguti(interuro)
+andika(f"Ibarura ry'inyuguti muri '{interuro}':")
+andika(ibyavuyemo)
+
+kuri i mu intera(3):
+    andika(f"Inshuro ya {i + 1}")
+
+niba uburebure(interuro) > 10:
+    andika("Interuro ni ndende.")

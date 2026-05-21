@@ -6,7 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "serpiente"
 version = "0.1.0"
 description = "Python with localized keywords"
-dependencies = []
+dependencies = [
+    "pygls>=2.0.0",
+    "lsprotocol>=2023.0.0",
+    "jedi>=0.19.0"
+]
 
 [project.scripts]
 serpiente = "serpiente.__main__:main"

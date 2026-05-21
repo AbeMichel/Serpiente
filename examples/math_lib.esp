@@ -1,0 +1,5 @@
+definir sumar(a, b):
+    retornar a + b
+
+definir multiplicar(a, b):
+    retornar a * b

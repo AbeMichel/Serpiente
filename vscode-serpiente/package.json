@@ -10,11 +10,19 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.60.0"
+        "vscode": "^1.67.0"
     },
+    "activationEvents": [
+        "onLanguage:python-esp",
+        "onLanguage:python-frp"
+    ],
+    "main": "./extension.js",
     "categories": [
         "Programming Languages"
     ],
+    "dependencies": {
+        "vscode-languageclient": "^8.1.0"
+    },
     "contributes": {
         "languages": [
             {
@@ -26,6 +34,16 @@
                     ".frp"
                 ],
                 "configuration": "./language-configurations/python-frp.json"
+            },
+            {
+                "id": "python-rwp",
+                "aliases": [
+                    "Python (rwp)"
+                ],
+                "extensions": [
+                    ".rwp"
+                ],
+                "configuration": "./language-configurations/python-rwp.json"
             },
             {
                 "id": "python-esp",
@@ -45,6 +63,11 @@
                 "path": "./syntaxes/python-frp.tmLanguage.json"
             },
             {
+                "language": "python-rwp",
+                "scopeName": "source.python-rwp",
+                "path": "./syntaxes/python-rwp.tmLanguage.json"
+            },
+            {
                 "language": "python-esp",
                 "scopeName": "source.python-esp",
                 "path": "./syntaxes/python-esp.tmLanguage.json"
@@ -54,6 +77,10 @@
             {
                 "language": "python-frp",
                 "path": "./snippets/python-frp.json"
+            },
+            {
+                "language": "python-rwp",
+                "path": "./snippets/python-rwp.json"
             },
             {
                 "language": "python-esp",

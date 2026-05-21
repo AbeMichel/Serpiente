@@ -1,0 +1,21 @@
+kuva utils imura saluer, calculer_total
+kuva math_lib imura multiplicar
+
+rema main():
+    izina = "Abraham"
+    saluer(izina)
+    
+    ibiciro = 100
+    ingano = 5
+    
+    igiteranyo = calculer_total(ibiciro, ingano)
+    andika(f"Igiteranyo ni: {igiteranyo}")
+    
+    inyuburane = multiplicar(ibiciro, ingano)
+    andika(f"Inyuburane ni: {inyuburane}")
+    
+    niba ukuri:
+        andika("Ibi ni ukuri!")
+
+niba __izina__ == "__main__":
+    main()

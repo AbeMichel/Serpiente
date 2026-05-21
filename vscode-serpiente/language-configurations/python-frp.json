@@ -66,7 +66,7 @@
     ],
     "onEnterRules": [
         {
-            "beforeText": "^\\s*(?:si|sinon|sinonsi|pour|tantque|definir).*?:\\s*$",
+            "beforeText": "^\\s*(?:classe|definir|sinonsi|sinon|excepter|finalement|pour|si|essayer|tantque|avec).*?:\\s*$",
             "action": {
                 "indent": "indent"
             }

@@ -1,9 +1,4 @@
 {
-    "Serpiente True": {
-        "prefix": "vrai",
-        "body": "vrai",
-        "description": "Python True"
-    },
     "Serpiente False": {
         "prefix": "faux",
         "body": "faux",
@@ -14,60 +9,100 @@
         "body": "aucun",
         "description": "Python None"
     },
+    "Serpiente True": {
+        "prefix": "vrai",
+        "body": "vrai",
+        "description": "Python True"
+    },
     "Serpiente and": {
         "prefix": "et",
         "body": "et",
         "description": "Python and"
     },
-    "Serpiente or": {
-        "prefix": "ou",
-        "body": "ou",
-        "description": "Python or"
+    "Serpiente as": {
+        "prefix": "comme",
+        "body": "comme",
+        "description": "Python as"
     },
-    "Serpiente not": {
-        "prefix": "non",
-        "body": "non",
-        "description": "Python not"
+    "Serpiente assert": {
+        "prefix": "affirmer",
+        "body": "affirmer",
+        "description": "Python assert"
     },
-    "Serpiente if": {
-        "prefix": "si",
-        "body": "si ${1:condition}:\n\t${0:pass}",
-        "description": "If statement"
+    "Serpiente async": {
+        "prefix": "asynchrone",
+        "body": "asynchrone",
+        "description": "Python async"
     },
-    "Serpiente else": {
-        "prefix": "sinon",
-        "body": "sinon",
-        "description": "Python else"
+    "Serpiente await": {
+        "prefix": "attendre",
+        "body": "attendre",
+        "description": "Python await"
     },
-    "Serpiente elif": {
-        "prefix": "sinonsi",
-        "body": "sinonsi",
-        "description": "Python elif"
+    "Serpiente break": {
+        "prefix": "rompre",
+        "body": "rompre",
+        "description": "Python break"
     },
-    "Serpiente for": {
-        "prefix": "pour",
-        "body": "pour ${1:item} in ${2:iterable}:\n\t${0:pass}",
-        "description": "For loop"
+    "Serpiente class": {
+        "prefix": "classe",
+        "body": "classe ${1:ClassName}:\n\t${0:pass}",
+        "description": "Class definition"
     },
-    "Serpiente while": {
-        "prefix": "tantque",
-        "body": "tantque ${1:condition}:\n\t${0:pass}",
-        "description": "While loop"
+    "Serpiente continue": {
+        "prefix": "continuer",
+        "body": "continuer",
+        "description": "Python continue"
     },
     "Serpiente def": {
         "prefix": "definir",
         "body": "definir ${1:func_name}(${2:params}):\n\t${0:pass}",
         "description": "Function definition"
     },
-    "Serpiente return": {
-        "prefix": "retourner",
-        "body": "retourner",
-        "description": "Python return"
+    "Serpiente del": {
+        "prefix": "supprimer",
+        "body": "supprimer",
+        "description": "Python del"
     },
-    "Serpiente print": {
-        "prefix": "afficher",
-        "body": "afficher(${1})",
-        "description": "Built-in function print"
+    "Serpiente elif": {
+        "prefix": "sinonsi",
+        "body": "sinonsi",
+        "description": "Python elif"
+    },
+    "Serpiente else": {
+        "prefix": "sinon",
+        "body": "sinon",
+        "description": "Python else"
+    },
+    "Serpiente except": {
+        "prefix": "excepter",
+        "body": "excepter",
+        "description": "Python except"
+    },
+    "Serpiente finally": {
+        "prefix": "finalement",
+        "body": "finalement",
+        "description": "Python finally"
+    },
+    "Serpiente for": {
+        "prefix": "pour",
+        "body": "pour ${1:item} in ${2:iterable}:\n\t${0:pass}",
+        "description": "For loop"
+    },
+    "Serpiente from": {
+        "prefix": "depuis",
+        "body": "depuis",
+        "description": "Python from"
+    },
+    "Serpiente global": {
+        "prefix": "global",
+        "body": "global",
+        "description": "Python global"
+    },
+    "Serpiente if": {
+        "prefix": "si",
+        "body": "si ${1:condition}:\n\t${0:pass}",
+        "description": "If statement"
     },
     "Serpiente import": {
         "prefix": "importer",
@@ -75,13 +110,793 @@
         "description": "Python import"
     },
     "Serpiente in": {
-        "prefix": "en",
-        "body": "en",
+        "prefix": "dans",
+        "body": "dans",
         "description": "Python in"
+    },
+    "Serpiente is": {
+        "prefix": "est",
+        "body": "est",
+        "description": "Python is"
+    },
+    "Serpiente lambda": {
+        "prefix": "lambda",
+        "body": "lambda",
+        "description": "Python lambda"
+    },
+    "Serpiente nonlocal": {
+        "prefix": "nonlocal",
+        "body": "nonlocal",
+        "description": "Python nonlocal"
+    },
+    "Serpiente not": {
+        "prefix": "non",
+        "body": "non",
+        "description": "Python not"
+    },
+    "Serpiente or": {
+        "prefix": "ou",
+        "body": "ou",
+        "description": "Python or"
+    },
+    "Serpiente pass": {
+        "prefix": "passer",
+        "body": "passer",
+        "description": "Python pass"
+    },
+    "Serpiente raise": {
+        "prefix": "lever",
+        "body": "lever",
+        "description": "Python raise"
+    },
+    "Serpiente return": {
+        "prefix": "retourner",
+        "body": "retourner",
+        "description": "Python return"
+    },
+    "Serpiente try": {
+        "prefix": "essayer",
+        "body": "essayer:\n\t${1:pass}\nexcept ${2:Exception}:\n\t${0:pass}",
+        "description": "Try-except block"
+    },
+    "Serpiente while": {
+        "prefix": "tantque",
+        "body": "tantque ${1:condition}:\n\t${0:pass}",
+        "description": "While loop"
+    },
+    "Serpiente with": {
+        "prefix": "avec",
+        "body": "avec ${1:expression} as ${2:target}:\n\t${0:pass}",
+        "description": "With statement"
+    },
+    "Serpiente yield": {
+        "prefix": "produire",
+        "body": "produire",
+        "description": "Python yield"
+    },
+    "Serpiente abs": {
+        "prefix": "absolu",
+        "body": "absolu(${1})",
+        "description": "Built-in function abs"
+    },
+    "Serpiente aiter": {
+        "prefix": "aiter",
+        "body": "aiter",
+        "description": "Python aiter"
+    },
+    "Serpiente all": {
+        "prefix": "tous",
+        "body": "tous(${1})",
+        "description": "Built-in function all"
+    },
+    "Serpiente anext": {
+        "prefix": "asuivant",
+        "body": "asuivant",
+        "description": "Python anext"
+    },
+    "Serpiente any": {
+        "prefix": "quelconque",
+        "body": "quelconque(${1})",
+        "description": "Built-in function any"
+    },
+    "Serpiente ascii": {
+        "prefix": "ascii",
+        "body": "ascii",
+        "description": "Python ascii"
+    },
+    "Serpiente bin": {
+        "prefix": "bin",
+        "body": "bin",
+        "description": "Python bin"
+    },
+    "Serpiente breakpoint": {
+        "prefix": "point_arret",
+        "body": "point_arret",
+        "description": "Python breakpoint"
+    },
+    "Serpiente callable": {
+        "prefix": "appelable",
+        "body": "appelable",
+        "description": "Python callable"
+    },
+    "Serpiente chr": {
+        "prefix": "chr",
+        "body": "chr",
+        "description": "Python chr"
+    },
+    "Serpiente classmethod": {
+        "prefix": "methode_classe",
+        "body": "methode_classe",
+        "description": "Python classmethod"
+    },
+    "Serpiente compile": {
+        "prefix": "compiler",
+        "body": "compiler(${1})",
+        "description": "Built-in function compile"
+    },
+    "Serpiente delattr": {
+        "prefix": "supprimer_attr",
+        "body": "supprimer_attr(${1})",
+        "description": "Built-in function delattr"
+    },
+    "Serpiente dir": {
+        "prefix": "dir",
+        "body": "dir",
+        "description": "Python dir"
+    },
+    "Serpiente divmod": {
+        "prefix": "divmod",
+        "body": "divmod(${1})",
+        "description": "Built-in function divmod"
+    },
+    "Serpiente enumerate": {
+        "prefix": "enumerer",
+        "body": "enumerer(${1})",
+        "description": "Built-in function enumerate"
+    },
+    "Serpiente eval": {
+        "prefix": "eval",
+        "body": "eval(${1})",
+        "description": "Built-in function eval"
+    },
+    "Serpiente exec": {
+        "prefix": "exec",
+        "body": "exec(${1})",
+        "description": "Built-in function exec"
+    },
+    "Serpiente exit": {
+        "prefix": "quitter",
+        "body": "quitter",
+        "description": "Python exit"
+    },
+    "Serpiente filter": {
+        "prefix": "filtrer",
+        "body": "filtrer(${1})",
+        "description": "Built-in function filter"
+    },
+    "Serpiente format": {
+        "prefix": "formater",
+        "body": "formater",
+        "description": "Python format"
+    },
+    "Serpiente getattr": {
+        "prefix": "obtenir_attr",
+        "body": "obtenir_attr(${1})",
+        "description": "Built-in function getattr"
+    },
+    "Serpiente globals": {
+        "prefix": "globaux",
+        "body": "globaux",
+        "description": "Python globals"
+    },
+    "Serpiente hasattr": {
+        "prefix": "a_attr",
+        "body": "a_attr(${1})",
+        "description": "Built-in function hasattr"
+    },
+    "Serpiente hash": {
+        "prefix": "hachage",
+        "body": "hachage",
+        "description": "Python hash"
+    },
+    "Serpiente help": {
+        "prefix": "aide",
+        "body": "aide(${1})",
+        "description": "Built-in function help"
+    },
+    "Serpiente hex": {
+        "prefix": "hex",
+        "body": "hex",
+        "description": "Python hex"
+    },
+    "Serpiente id": {
+        "prefix": "id",
+        "body": "id",
+        "description": "Python id"
+    },
+    "Serpiente input": {
+        "prefix": "entree",
+        "body": "entree(${1})",
+        "description": "Built-in function input"
+    },
+    "Serpiente isinstance": {
+        "prefix": "est_instance",
+        "body": "est_instance(${1})",
+        "description": "Built-in function isinstance"
+    },
+    "Serpiente issubclass": {
+        "prefix": "est_sous_classe",
+        "body": "est_sous_classe(${1})",
+        "description": "Built-in function issubclass"
+    },
+    "Serpiente iter": {
+        "prefix": "iter",
+        "body": "iter(${1})",
+        "description": "Built-in function iter"
+    },
+    "Serpiente len": {
+        "prefix": "longueur",
+        "body": "longueur(${1})",
+        "description": "Built-in function len"
+    },
+    "Serpiente locals": {
+        "prefix": "locaux",
+        "body": "locaux",
+        "description": "Python locals"
+    },
+    "Serpiente map": {
+        "prefix": "map",
+        "body": "map(${1})",
+        "description": "Built-in function map"
+    },
+    "Serpiente max": {
+        "prefix": "max",
+        "body": "max(${1})",
+        "description": "Built-in function max"
+    },
+    "Serpiente min": {
+        "prefix": "min",
+        "body": "min(${1})",
+        "description": "Built-in function min"
+    },
+    "Serpiente next": {
+        "prefix": "suivant",
+        "body": "suivant(${1})",
+        "description": "Built-in function next"
+    },
+    "Serpiente oct": {
+        "prefix": "oct",
+        "body": "oct",
+        "description": "Python oct"
+    },
+    "Serpiente open": {
+        "prefix": "ouvrir",
+        "body": "ouvrir(${1})",
+        "description": "Built-in function open"
+    },
+    "Serpiente ord": {
+        "prefix": "ord",
+        "body": "ord",
+        "description": "Python ord"
+    },
+    "Serpiente pow": {
+        "prefix": "puissance",
+        "body": "puissance(${1})",
+        "description": "Built-in function pow"
+    },
+    "Serpiente print": {
+        "prefix": "afficher",
+        "body": "afficher(${1})",
+        "description": "Built-in function print"
+    },
+    "Serpiente property": {
+        "prefix": "propriete",
+        "body": "propriete(${1})",
+        "description": "Built-in function property"
+    },
+    "Serpiente quit": {
+        "prefix": "quitter_session",
+        "body": "quitter_session",
+        "description": "Python quit"
     },
     "Serpiente range": {
         "prefix": "rang",
         "body": "rang(${1})",
         "description": "Built-in function range"
+    },
+    "Serpiente repr": {
+        "prefix": "repr",
+        "body": "repr",
+        "description": "Python repr"
+    },
+    "Serpiente reversed": {
+        "prefix": "inverse",
+        "body": "inverse(${1})",
+        "description": "Built-in function reversed"
+    },
+    "Serpiente round": {
+        "prefix": "arrondir",
+        "body": "arrondir(${1})",
+        "description": "Built-in function round"
+    },
+    "Serpiente setattr": {
+        "prefix": "definir_attr",
+        "body": "definir_attr(${1})",
+        "description": "Built-in function setattr"
+    },
+    "Serpiente slice": {
+        "prefix": "tranche",
+        "body": "tranche",
+        "description": "Python slice"
+    },
+    "Serpiente sorted": {
+        "prefix": "trier",
+        "body": "trier(${1})",
+        "description": "Built-in function sorted"
+    },
+    "Serpiente staticmethod": {
+        "prefix": "methode_statique",
+        "body": "methode_statique(${1})",
+        "description": "Built-in function staticmethod"
+    },
+    "Serpiente sum": {
+        "prefix": "somme",
+        "body": "somme(${1})",
+        "description": "Built-in function sum"
+    },
+    "Serpiente super": {
+        "prefix": "super",
+        "body": "super",
+        "description": "Python super"
+    },
+    "Serpiente vars": {
+        "prefix": "variables",
+        "body": "variables",
+        "description": "Python vars"
+    },
+    "Serpiente zip": {
+        "prefix": "compresser",
+        "body": "compresser(${1})",
+        "description": "Built-in function zip"
+    },
+    "Serpiente bool": {
+        "prefix": "booleen",
+        "body": "booleen(${1})",
+        "description": "Built-in function bool"
+    },
+    "Serpiente bytearray": {
+        "prefix": "tableau_octets",
+        "body": "tableau_octets",
+        "description": "Python bytearray"
+    },
+    "Serpiente bytes": {
+        "prefix": "octets",
+        "body": "octets",
+        "description": "Python bytes"
+    },
+    "Serpiente complex": {
+        "prefix": "complexe",
+        "body": "complexe",
+        "description": "Python complex"
+    },
+    "Serpiente dict": {
+        "prefix": "dict",
+        "body": "dict(${1})",
+        "description": "Built-in function dict"
+    },
+    "Serpiente float": {
+        "prefix": "flottant",
+        "body": "flottant(${1})",
+        "description": "Built-in function float"
+    },
+    "Serpiente frozenset": {
+        "prefix": "ensemble_gele",
+        "body": "ensemble_gele",
+        "description": "Python frozenset"
+    },
+    "Serpiente int": {
+        "prefix": "entier",
+        "body": "entier(${1})",
+        "description": "Built-in function int"
+    },
+    "Serpiente list": {
+        "prefix": "liste",
+        "body": "liste(${1})",
+        "description": "Built-in function list"
+    },
+    "Serpiente memoryview": {
+        "prefix": "vue_memoire",
+        "body": "vue_memoire",
+        "description": "Python memoryview"
+    },
+    "Serpiente object": {
+        "prefix": "objet",
+        "body": "objet(${1})",
+        "description": "Built-in function object"
+    },
+    "Serpiente set": {
+        "prefix": "ensemble",
+        "body": "ensemble(${1})",
+        "description": "Built-in function set"
+    },
+    "Serpiente str": {
+        "prefix": "chaine",
+        "body": "chaine(${1})",
+        "description": "Built-in function str"
+    },
+    "Serpiente tuple": {
+        "prefix": "uplet",
+        "body": "uplet(${1})",
+        "description": "Built-in function tuple"
+    },
+    "Serpiente type": {
+        "prefix": "type",
+        "body": "type(${1})",
+        "description": "Built-in function type"
+    },
+    "Serpiente Ellipsis": {
+        "prefix": "elipsis",
+        "body": "elipsis",
+        "description": "Python Ellipsis"
+    },
+    "Serpiente NotImplemented": {
+        "prefix": "non_implemente",
+        "body": "non_implemente",
+        "description": "Python NotImplemented"
+    },
+    "Serpiente __debug__": {
+        "prefix": "debogage",
+        "body": "debogage",
+        "description": "Python __debug__"
+    },
+    "Serpiente ArithmeticError": {
+        "prefix": "ErreurArithmetique",
+        "body": "ErreurArithmetique",
+        "description": "Python ArithmeticError"
+    },
+    "Serpiente AssertionError": {
+        "prefix": "ErreurAssertion",
+        "body": "ErreurAssertion",
+        "description": "Python AssertionError"
+    },
+    "Serpiente AttributeError": {
+        "prefix": "ErreurAttribut",
+        "body": "ErreurAttribut",
+        "description": "Python AttributeError"
+    },
+    "Serpiente BaseException": {
+        "prefix": "ExceptionBase",
+        "body": "ExceptionBase",
+        "description": "Python BaseException"
+    },
+    "Serpiente BaseExceptionGroup": {
+        "prefix": "GroupeExceptionBase",
+        "body": "GroupeExceptionBase",
+        "description": "Python BaseExceptionGroup"
+    },
+    "Serpiente BlockingIOError": {
+        "prefix": "ErreurIOBloquante",
+        "body": "ErreurIOBloquante",
+        "description": "Python BlockingIOError"
+    },
+    "Serpiente BrokenPipeError": {
+        "prefix": "ErreurTubeRompu",
+        "body": "ErreurTubeRompu",
+        "description": "Python BrokenPipeError"
+    },
+    "Serpiente BufferError": {
+        "prefix": "ErreurTampon",
+        "body": "ErreurTampon",
+        "description": "Python BufferError"
+    },
+    "Serpiente BytesWarning": {
+        "prefix": "AvertissementBytes",
+        "body": "AvertissementBytes",
+        "description": "Python BytesWarning"
+    },
+    "Serpiente ChildProcessError": {
+        "prefix": "ErreurProcessusFils",
+        "body": "ErreurProcessusFils",
+        "description": "Python ChildProcessError"
+    },
+    "Serpiente ConnectionAbortedError": {
+        "prefix": "ErreurConnexionAvortee",
+        "body": "ErreurConnexionAvortee",
+        "description": "Python ConnectionAbortedError"
+    },
+    "Serpiente ConnectionError": {
+        "prefix": "ErreurConnexion",
+        "body": "ErreurConnexion",
+        "description": "Python ConnectionError"
+    },
+    "Serpiente ConnectionRefusedError": {
+        "prefix": "ErreurConnexionRefusee",
+        "body": "ErreurConnexionRefusee",
+        "description": "Python ConnectionRefusedError"
+    },
+    "Serpiente ConnectionResetError": {
+        "prefix": "ErreurConnexionReinitialisee",
+        "body": "ErreurConnexionReinitialisee",
+        "description": "Python ConnectionResetError"
+    },
+    "Serpiente DeprecationWarning": {
+        "prefix": "AvertissementDepreciation",
+        "body": "AvertissementDepreciation",
+        "description": "Python DeprecationWarning"
+    },
+    "Serpiente EOFError": {
+        "prefix": "ErreurFinFichier",
+        "body": "ErreurFinFichier",
+        "description": "Python EOFError"
+    },
+    "Serpiente EncodingWarning": {
+        "prefix": "AvertissementEncodage",
+        "body": "AvertissementEncodage",
+        "description": "Python EncodingWarning"
+    },
+    "Serpiente EnvironmentError": {
+        "prefix": "ErreurEnvironnement",
+        "body": "ErreurEnvironnement",
+        "description": "Python EnvironmentError"
+    },
+    "Serpiente Exception": {
+        "prefix": "Exception",
+        "body": "Exception",
+        "description": "Python Exception"
+    },
+    "Serpiente ExceptionGroup": {
+        "prefix": "GroupeException",
+        "body": "GroupeException",
+        "description": "Python ExceptionGroup"
+    },
+    "Serpiente FileExistsError": {
+        "prefix": "ErreurFichierExiste",
+        "body": "ErreurFichierExiste",
+        "description": "Python FileExistsError"
+    },
+    "Serpiente FileNotFoundError": {
+        "prefix": "ErreurFichierNonTrouve",
+        "body": "ErreurFichierNonTrouve",
+        "description": "Python FileNotFoundError"
+    },
+    "Serpiente FloatingPointError": {
+        "prefix": "ErreurVirguleFlottante",
+        "body": "ErreurVirguleFlottante",
+        "description": "Python FloatingPointError"
+    },
+    "Serpiente FutureWarning": {
+        "prefix": "AvertissementFutur",
+        "body": "AvertissementFutur",
+        "description": "Python FutureWarning"
+    },
+    "Serpiente GeneratorExit": {
+        "prefix": "SortieGenerateur",
+        "body": "SortieGenerateur",
+        "description": "Python GeneratorExit"
+    },
+    "Serpiente IOError": {
+        "prefix": "ErreurIO",
+        "body": "ErreurIO",
+        "description": "Python IOError"
+    },
+    "Serpiente ImportError": {
+        "prefix": "ErreurImportation",
+        "body": "ErreurImportation",
+        "description": "Python ImportError"
+    },
+    "Serpiente ImportWarning": {
+        "prefix": "AvertissementImportation",
+        "body": "AvertissementImportation",
+        "description": "Python ImportWarning"
+    },
+    "Serpiente IndentationError": {
+        "prefix": "ErreurIndentation",
+        "body": "ErreurIndentation",
+        "description": "Python IndentationError"
+    },
+    "Serpiente IndexError": {
+        "prefix": "ErreurIndex",
+        "body": "ErreurIndex",
+        "description": "Python IndexError"
+    },
+    "Serpiente InterruptedError": {
+        "prefix": "ErreurInterrompue",
+        "body": "ErreurInterrompue",
+        "description": "Python InterruptedError"
+    },
+    "Serpiente IsADirectoryError": {
+        "prefix": "ErreurEstRepertoire",
+        "body": "ErreurEstRepertoire",
+        "description": "Python IsADirectoryError"
+    },
+    "Serpiente KeyError": {
+        "prefix": "ErreurCle",
+        "body": "ErreurCle",
+        "description": "Python KeyError"
+    },
+    "Serpiente KeyboardInterrupt": {
+        "prefix": "InterruptionClavier",
+        "body": "InterruptionClavier",
+        "description": "Python KeyboardInterrupt"
+    },
+    "Serpiente LookupError": {
+        "prefix": "ErreurRecherche",
+        "body": "ErreurRecherche",
+        "description": "Python LookupError"
+    },
+    "Serpiente MemoryError": {
+        "prefix": "ErreurMemoire",
+        "body": "ErreurMemoire",
+        "description": "Python MemoryError"
+    },
+    "Serpiente ModuleNotFoundError": {
+        "prefix": "ErreurModuleNonTrouve",
+        "body": "ErreurModuleNonTrouve",
+        "description": "Python ModuleNotFoundError"
+    },
+    "Serpiente NameError": {
+        "prefix": "ErreurNom",
+        "body": "ErreurNom",
+        "description": "Python NameError"
+    },
+    "Serpiente NotADirectoryError": {
+        "prefix": "ErreurPasRepertoire",
+        "body": "ErreurPasRepertoire",
+        "description": "Python NotADirectoryError"
+    },
+    "Serpiente NotImplementedError": {
+        "prefix": "ErreurNonImplemente",
+        "body": "ErreurNonImplemente",
+        "description": "Python NotImplementedError"
+    },
+    "Serpiente OSError": {
+        "prefix": "ErreurOS",
+        "body": "ErreurOS",
+        "description": "Python OSError"
+    },
+    "Serpiente OverflowError": {
+        "prefix": "ErreurDebordement",
+        "body": "ErreurDebordement",
+        "description": "Python OverflowError"
+    },
+    "Serpiente PendingDeprecationWarning": {
+        "prefix": "AvertissementDepreciationPendante",
+        "body": "AvertissementDepreciationPendante",
+        "description": "Python PendingDeprecationWarning"
+    },
+    "Serpiente PermissionError": {
+        "prefix": "ErreurPermission",
+        "body": "ErreurPermission",
+        "description": "Python PermissionError"
+    },
+    "Serpiente ProcessLookupError": {
+        "prefix": "ErreurRechercheProcessus",
+        "body": "ErreurRechercheProcessus",
+        "description": "Python ProcessLookupError"
+    },
+    "Serpiente PythonFinalizationError": {
+        "prefix": "ErreurFinalisationPython",
+        "body": "ErreurFinalisationPython",
+        "description": "Python PythonFinalizationError"
+    },
+    "Serpiente RecursionError": {
+        "prefix": "ErreurRecursion",
+        "body": "ErreurRecursion",
+        "description": "Python RecursionError"
+    },
+    "Serpiente ReferenceError": {
+        "prefix": "ErreurReference",
+        "body": "ErreurReference",
+        "description": "Python ReferenceError"
+    },
+    "Serpiente ResourceWarning": {
+        "prefix": "AvertissementRessource",
+        "body": "AvertissementRessource",
+        "description": "Python ResourceWarning"
+    },
+    "Serpiente RuntimeError": {
+        "prefix": "ErreurExecution",
+        "body": "ErreurExecution",
+        "description": "Python RuntimeError"
+    },
+    "Serpiente RuntimeWarning": {
+        "prefix": "AvertissementExecution",
+        "body": "AvertissementExecution",
+        "description": "Python RuntimeWarning"
+    },
+    "Serpiente StopAsyncIteration": {
+        "prefix": "ArretIterationAsynchrone",
+        "body": "ArretIterationAsynchrone",
+        "description": "Python StopAsyncIteration"
+    },
+    "Serpiente StopIteration": {
+        "prefix": "ArretIteration",
+        "body": "ArretIteration",
+        "description": "Python StopIteration"
+    },
+    "Serpiente SyntaxError": {
+        "prefix": "ErreurSyntaxe",
+        "body": "ErreurSyntaxe",
+        "description": "Python SyntaxError"
+    },
+    "Serpiente SyntaxWarning": {
+        "prefix": "AvertissementSyntaxe",
+        "body": "AvertissementSyntaxe",
+        "description": "Python SyntaxWarning"
+    },
+    "Serpiente SystemError": {
+        "prefix": "ErreurSysteme",
+        "body": "ErreurSysteme",
+        "description": "Python SystemError"
+    },
+    "Serpiente SystemExit": {
+        "prefix": "SortieSysteme",
+        "body": "SortieSysteme",
+        "description": "Python SystemExit"
+    },
+    "Serpiente TabError": {
+        "prefix": "ErreurTabulation",
+        "body": "ErreurTabulation",
+        "description": "Python TabError"
+    },
+    "Serpiente TimeoutError": {
+        "prefix": "ErreurTempsDepasse",
+        "body": "ErreurTempsDepasse",
+        "description": "Python TimeoutError"
+    },
+    "Serpiente TypeError": {
+        "prefix": "ErreurType",
+        "body": "ErreurType",
+        "description": "Python TypeError"
+    },
+    "Serpiente UnboundLocalError": {
+        "prefix": "ErreurNomLocalNonLie",
+        "body": "ErreurNomLocalNonLie",
+        "description": "Python UnboundLocalError"
+    },
+    "Serpiente UnicodeDecodeError": {
+        "prefix": "ErreurDecodageUnicode",
+        "body": "ErreurDecodageUnicode",
+        "description": "Python UnicodeDecodeError"
+    },
+    "Serpiente UnicodeEncodeError": {
+        "prefix": "ErreurEncodageUnicode",
+        "body": "ErreurEncodageUnicode",
+        "description": "Python UnicodeEncodeError"
+    },
+    "Serpiente UnicodeError": {
+        "prefix": "ErreurUnicode",
+        "body": "ErreurUnicode",
+        "description": "Python UnicodeError"
+    },
+    "Serpiente UnicodeTranslateError": {
+        "prefix": "ErreurTraductionUnicode",
+        "body": "ErreurTraductionUnicode",
+        "description": "Python UnicodeTranslateError"
+    },
+    "Serpiente UnicodeWarning": {
+        "prefix": "AvertissementUnicode",
+        "body": "AvertissementUnicode",
+        "description": "Python UnicodeWarning"
+    },
+    "Serpiente UserWarning": {
+        "prefix": "AvertissementUtilisateur",
+        "body": "AvertissementUtilisateur",
+        "description": "Python UserWarning"
+    },
+    "Serpiente ValueError": {
+        "prefix": "ErreurValeur",
+        "body": "ErreurValeur",
+        "description": "Python ValueError"
+    },
+    "Serpiente Warning": {
+        "prefix": "Avertissement",
+        "body": "Avertissement",
+        "description": "Python Warning"
+    },
+    "Serpiente ZeroDivisionError": {
+        "prefix": "ErreurDivisionParZero",
+        "body": "ErreurDivisionParZero",
+        "description": "Python ZeroDivisionError"
     }
 }

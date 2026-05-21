@@ -28,9 +28,17 @@ def generate_extension():
         },
         "license": "MIT",
         "engines": {
-            "vscode": "^1.60.0"
+            "vscode": "^1.67.0"
         },
+        "activationEvents": [
+            "onLanguage:python-esp",
+            "onLanguage:python-frp"
+        ],
+        "main": "./extension.js",
         "categories": ["Programming Languages"],
+        "dependencies": {
+            "vscode-languageclient": "^8.1.0"
+        },
         "contributes": {
             "languages": [],
             "grammars": [],
@@ -72,13 +80,96 @@ def generate_extension():
 
     # 3. Generate .vscodeignore
     with open(os.path.join(output_dir, ".vscodeignore"), "w") as f:
-        f.write(".vscode-test\nnode_modules\n.git\n.gitignore\n.vscode\n*.vsix\n")
+        f.write(".vscode-test\n.git\n.gitignore\n.vscode\n*.vsix\n")
 
     # 5. Generate a basic LICENSE file
     with open(os.path.join(output_dir, "LICENSE"), "w") as f:
         f.write("MIT License\n\nCopyright (c) 2026\n")
 
+    # 6. Generate extension.js (LSP Client)
+    generate_extension_js(os.path.join(output_dir, "extension.js"))
+
     print(f"Extension generated in {output_dir}/")
+
+def generate_extension_js(output_path):
+    js_content = """
+const { LanguageClient } = require('vscode-languageclient/node');
+const vscode = require('vscode');
+const path = require('path');
+const os = require('os');
+const fs = require('fs');
+
+let client;
+
+function activate(context) {
+    console.log('Serpiente extension activating...');
+
+    const workspaceFolders = vscode.workspace.workspaceFolders;
+    if (!workspaceFolders) {
+        console.log('No workspace folder found.');
+        return;
+    }
+
+    const projectRoot = workspaceFolders[0].uri.fsPath;
+    const isWindows = os.platform() === 'win32';
+    const pythonBinary = isWindows ? 'Scripts/python.exe' : 'bin/python';
+    
+    // 1. Try workspace .venv
+    let pythonPath = path.join(projectRoot, '.venv', pythonBinary);
+    
+    // 2. Fallback to a hardcoded path for the developer environment
+    if (!fs.existsSync(pythonPath)) {
+        pythonPath = '/Users/abrahammichel/Projects/Serpiente/.venv/bin/python';
+    }
+
+    const serverPath = path.join(projectRoot, 'serpiente', 'lsp.py');
+
+    console.log('Using Python:', pythonPath);
+    console.log('Using Server:', serverPath);
+
+    if (!fs.existsSync(pythonPath)) {
+        vscode.window.showErrorMessage(`Serpiente: Could not find Python venv at ${pythonPath}`);
+        return;
+    }
+
+    const serverOptions = {
+        command: pythonPath,
+        args: [serverPath],
+    };
+
+    const clientOptions = {
+        documentSelector: [
+            { scheme: 'file', language: 'python-esp' },
+            { scheme: 'file', language: 'python-frp' }
+        ],
+    };
+
+    client = new LanguageClient(
+        'serpienteLSP',
+        'Serpiente Language Server',
+        serverOptions,
+        clientOptions
+    );
+
+    client.start().catch(err => {
+        console.error('Failed to start Serpiente LSP:', err);
+    });
+}
+
+function deactivate() {
+    if (!client) {
+        return undefined;
+    }
+    return client.stop();
+}
+
+module.exports = {
+    activate,
+    deactivate
+};
+"""
+    with open(output_path, "w") as f:
+        f.write(js_content.strip())
 
 def generate_grammar(output_path, lang_id, mapping):
     # Basic grammar that highlights localized keywords
@@ -99,7 +190,8 @@ def generate_grammar(output_path, lang_id, mapping):
             { "include": "#keywords" },
             { "include": "#builtins" },
             { "include": "#strings" },
-            { "include": "#comments" }
+            { "include": "#comments" },
+            { "include": "source.python" }
         ],
         "repository": {
             "keywords": {

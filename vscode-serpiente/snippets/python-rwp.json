@@ -1,0 +1,622 @@
+{
+    "Serpiente False": {
+        "prefix": "ibinyoma",
+        "body": "ibinyoma",
+        "description": "Python False"
+    },
+    "Serpiente None": {
+        "prefix": "ubusa",
+        "body": "ubusa",
+        "description": "Python None"
+    },
+    "Serpiente True": {
+        "prefix": "ukuri",
+        "body": "ukuri",
+        "description": "Python True"
+    },
+    "Serpiente and": {
+        "prefix": "na",
+        "body": "na",
+        "description": "Python and"
+    },
+    "Serpiente as": {
+        "prefix": "nka",
+        "body": "nka",
+        "description": "Python as"
+    },
+    "Serpiente assert": {
+        "prefix": "emeza",
+        "body": "emeza",
+        "description": "Python assert"
+    },
+    "Serpiente async": {
+        "prefix": "asinkironi",
+        "body": "asinkironi",
+        "description": "Python async"
+    },
+    "Serpiente await": {
+        "prefix": "tegereza",
+        "body": "tegereza",
+        "description": "Python await"
+    },
+    "Serpiente break": {
+        "prefix": "hagarara",
+        "body": "hagarara",
+        "description": "Python break"
+    },
+    "Serpiente class": {
+        "prefix": "ishuri",
+        "body": "ishuri ${1:ClassName}:\n\t${0:pass}",
+        "description": "Class definition"
+    },
+    "Serpiente continue": {
+        "prefix": "komeza",
+        "body": "komeza",
+        "description": "Python continue"
+    },
+    "Serpiente def": {
+        "prefix": "rema",
+        "body": "rema ${1:func_name}(${2:params}):\n\t${0:pass}",
+        "description": "Function definition"
+    },
+    "Serpiente del": {
+        "prefix": "siba",
+        "body": "siba",
+        "description": "Python del"
+    },
+    "Serpiente elif": {
+        "prefix": "icyakora_niba",
+        "body": "icyakora_niba",
+        "description": "Python elif"
+    },
+    "Serpiente else": {
+        "prefix": "naho_ubundi",
+        "body": "naho_ubundi",
+        "description": "Python else"
+    },
+    "Serpiente except": {
+        "prefix": "usibye",
+        "body": "usibye",
+        "description": "Python except"
+    },
+    "Serpiente finally": {
+        "prefix": "amaherezo",
+        "body": "amaherezo",
+        "description": "Python finally"
+    },
+    "Serpiente for": {
+        "prefix": "kuri",
+        "body": "kuri ${1:item} in ${2:iterable}:\n\t${0:pass}",
+        "description": "For loop"
+    },
+    "Serpiente from": {
+        "prefix": "kuva",
+        "body": "kuva",
+        "description": "Python from"
+    },
+    "Serpiente global": {
+        "prefix": "rusange",
+        "body": "rusange",
+        "description": "Python global"
+    },
+    "Serpiente if": {
+        "prefix": "niba",
+        "body": "niba ${1:condition}:\n\t${0:pass}",
+        "description": "If statement"
+    },
+    "Serpiente import": {
+        "prefix": "imura",
+        "body": "imura",
+        "description": "Python import"
+    },
+    "Serpiente in": {
+        "prefix": "mu",
+        "body": "mu",
+        "description": "Python in"
+    },
+    "Serpiente is": {
+        "prefix": "ni",
+        "body": "ni",
+        "description": "Python is"
+    },
+    "Serpiente lambda": {
+        "prefix": "lambda",
+        "body": "lambda",
+        "description": "Python lambda"
+    },
+    "Serpiente nonlocal": {
+        "prefix": "si_hafi",
+        "body": "si_hafi",
+        "description": "Python nonlocal"
+    },
+    "Serpiente not": {
+        "prefix": "si",
+        "body": "si",
+        "description": "Python not"
+    },
+    "Serpiente or": {
+        "prefix": "cyangwa",
+        "body": "cyangwa",
+        "description": "Python or"
+    },
+    "Serpiente pass": {
+        "prefix": "hita",
+        "body": "hita",
+        "description": "Python pass"
+    },
+    "Serpiente raise": {
+        "prefix": "zamura",
+        "body": "zamura",
+        "description": "Python raise"
+    },
+    "Serpiente return": {
+        "prefix": "garura",
+        "body": "garura",
+        "description": "Python return"
+    },
+    "Serpiente try": {
+        "prefix": "gerageza",
+        "body": "gerageza:\n\t${1:pass}\nexcept ${2:Exception}:\n\t${0:pass}",
+        "description": "Try-except block"
+    },
+    "Serpiente while": {
+        "prefix": "mugihe",
+        "body": "mugihe ${1:condition}:\n\t${0:pass}",
+        "description": "While loop"
+    },
+    "Serpiente with": {
+        "prefix": "hamwe",
+        "body": "hamwe ${1:expression} as ${2:target}:\n\t${0:pass}",
+        "description": "With statement"
+    },
+    "Serpiente yield": {
+        "prefix": "tanga",
+        "body": "tanga",
+        "description": "Python yield"
+    },
+    "Serpiente abs": {
+        "prefix": "mpamo",
+        "body": "mpamo(${1})",
+        "description": "Built-in function abs"
+    },
+    "Serpiente aiter": {
+        "prefix": "aiter",
+        "body": "aiter",
+        "description": "Python aiter"
+    },
+    "Serpiente all": {
+        "prefix": "byose",
+        "body": "byose(${1})",
+        "description": "Built-in function all"
+    },
+    "Serpiente anext": {
+        "prefix": "anext",
+        "body": "anext",
+        "description": "Python anext"
+    },
+    "Serpiente any": {
+        "prefix": "icyaricyo_cyose",
+        "body": "icyaricyo_cyose(${1})",
+        "description": "Built-in function any"
+    },
+    "Serpiente ascii": {
+        "prefix": "ascii",
+        "body": "ascii",
+        "description": "Python ascii"
+    },
+    "Serpiente bin": {
+        "prefix": "bin",
+        "body": "bin",
+        "description": "Python bin"
+    },
+    "Serpiente breakpoint": {
+        "prefix": "hagarika_hano",
+        "body": "hagarika_hano",
+        "description": "Python breakpoint"
+    },
+    "Serpiente callable": {
+        "prefix": "ihamagaye",
+        "body": "ihamagaye",
+        "description": "Python callable"
+    },
+    "Serpiente chr": {
+        "prefix": "inyuguti",
+        "body": "inyuguti",
+        "description": "Python chr"
+    },
+    "Serpiente classmethod": {
+        "prefix": "uburyo_bwishuri",
+        "body": "uburyo_bwishuri",
+        "description": "Python classmethod"
+    },
+    "Serpiente compile": {
+        "prefix": "kumbila",
+        "body": "kumbila(${1})",
+        "description": "Built-in function compile"
+    },
+    "Serpiente delattr": {
+        "prefix": "siba_ibiranga",
+        "body": "siba_ibiranga(${1})",
+        "description": "Built-in function delattr"
+    },
+    "Serpiente dir": {
+        "prefix": "ibiranga",
+        "body": "ibiranga",
+        "description": "Python dir"
+    },
+    "Serpiente divmod": {
+        "prefix": "divmod",
+        "body": "divmod(${1})",
+        "description": "Built-in function divmod"
+    },
+    "Serpiente enumerate": {
+        "prefix": "bara",
+        "body": "bara(${1})",
+        "description": "Built-in function enumerate"
+    },
+    "Serpiente eval": {
+        "prefix": "evail",
+        "body": "evail(${1})",
+        "description": "Built-in function eval"
+    },
+    "Serpiente exec": {
+        "prefix": "ekizekiti",
+        "body": "ekizekiti(${1})",
+        "description": "Built-in function exec"
+    },
+    "Serpiente exit": {
+        "prefix": "sohoka",
+        "body": "sohoka",
+        "description": "Python exit"
+    },
+    "Serpiente filter": {
+        "prefix": "ayungurura",
+        "body": "ayungurura(${1})",
+        "description": "Built-in function filter"
+    },
+    "Serpiente format": {
+        "prefix": "fomata",
+        "body": "fomata",
+        "description": "Python format"
+    },
+    "Serpiente getattr": {
+        "prefix": "fata_ikiranga",
+        "body": "fata_ikiranga(${1})",
+        "description": "Built-in function getattr"
+    },
+    "Serpiente globals": {
+        "prefix": "isi",
+        "body": "isi",
+        "description": "Python globals"
+    },
+    "Serpiente hasattr": {
+        "prefix": "fite_ikiranga",
+        "body": "fite_ikiranga(${1})",
+        "description": "Built-in function hasattr"
+    },
+    "Serpiente hash": {
+        "prefix": "hashi",
+        "body": "hashi",
+        "description": "Python hash"
+    },
+    "Serpiente help": {
+        "prefix": "bufasha",
+        "body": "bufasha(${1})",
+        "description": "Built-in function help"
+    },
+    "Serpiente hex": {
+        "prefix": "hekizadesimali",
+        "body": "hekizadesimali",
+        "description": "Python hex"
+    },
+    "Serpiente id": {
+        "prefix": "id",
+        "body": "id",
+        "description": "Python id"
+    },
+    "Serpiente input": {
+        "prefix": "injiza",
+        "body": "injiza(${1})",
+        "description": "Built-in function input"
+    },
+    "Serpiente isinstance": {
+        "prefix": "ni_urugero_rwa",
+        "body": "ni_urugero_rwa(${1})",
+        "description": "Built-in function isinstance"
+    },
+    "Serpiente issubclass": {
+        "prefix": "ni_ishuri_ryungirije",
+        "body": "ni_ishuri_ryungirije(${1})",
+        "description": "Built-in function issubclass"
+    },
+    "Serpiente iter": {
+        "prefix": "itera",
+        "body": "itera(${1})",
+        "description": "Built-in function iter"
+    },
+    "Serpiente len": {
+        "prefix": "uburebure",
+        "body": "uburebure(${1})",
+        "description": "Built-in function len"
+    },
+    "Serpiente locals": {
+        "prefix": "ibyaha",
+        "body": "ibyaha",
+        "description": "Python locals"
+    },
+    "Serpiente map": {
+        "prefix": "mapu",
+        "body": "mapu(${1})",
+        "description": "Built-in function map"
+    },
+    "Serpiente max": {
+        "prefix": "kinini",
+        "body": "kinini(${1})",
+        "description": "Built-in function max"
+    },
+    "Serpiente min": {
+        "prefix": "gito",
+        "body": "gito(${1})",
+        "description": "Built-in function min"
+    },
+    "Serpiente next": {
+        "prefix": "ukurikiyeho",
+        "body": "ukurikiyeho(${1})",
+        "description": "Built-in function next"
+    },
+    "Serpiente oct": {
+        "prefix": "okita",
+        "body": "okita",
+        "description": "Python oct"
+    },
+    "Serpiente open": {
+        "prefix": "fungura",
+        "body": "fungura(${1})",
+        "description": "Built-in function open"
+    },
+    "Serpiente ord": {
+        "prefix": "odi",
+        "body": "odi",
+        "description": "Python ord"
+    },
+    "Serpiente pow": {
+        "prefix": "imbaraga",
+        "body": "imbaraga(${1})",
+        "description": "Built-in function pow"
+    },
+    "Serpiente print": {
+        "prefix": "andika",
+        "body": "andika(${1})",
+        "description": "Built-in function print"
+    },
+    "Serpiente property": {
+        "prefix": "umwihariko",
+        "body": "umwihariko(${1})",
+        "description": "Built-in function property"
+    },
+    "Serpiente quit": {
+        "prefix": "reka",
+        "body": "reka",
+        "description": "Python quit"
+    },
+    "Serpiente range": {
+        "prefix": "intera",
+        "body": "intera(${1})",
+        "description": "Built-in function range"
+    },
+    "Serpiente repr": {
+        "prefix": "repuru",
+        "body": "repuru",
+        "description": "Python repr"
+    },
+    "Serpiente reversed": {
+        "prefix": "subira_inyuma",
+        "body": "subira_inyuma(${1})",
+        "description": "Built-in function reversed"
+    },
+    "Serpiente round": {
+        "prefix": "gereranya",
+        "body": "gereranya(${1})",
+        "description": "Built-in function round"
+    },
+    "Serpiente setattr": {
+        "prefix": "shyiraho_ikiranga",
+        "body": "shyiraho_ikiranga(${1})",
+        "description": "Built-in function setattr"
+    },
+    "Serpiente slice": {
+        "prefix": "isila",
+        "body": "isila",
+        "description": "Python slice"
+    },
+    "Serpiente sorted": {
+        "prefix": "tonda",
+        "body": "tonda(${1})",
+        "description": "Built-in function sorted"
+    },
+    "Serpiente staticmethod": {
+        "prefix": "uburyo_budahinduka",
+        "body": "uburyo_budahinduka(${1})",
+        "description": "Built-in function staticmethod"
+    },
+    "Serpiente sum": {
+        "prefix": "teranya",
+        "body": "teranya(${1})",
+        "description": "Built-in function sum"
+    },
+    "Serpiente super": {
+        "prefix": "hejuru",
+        "body": "hejuru",
+        "description": "Python super"
+    },
+    "Serpiente vars": {
+        "prefix": "vasi",
+        "body": "vasi",
+        "description": "Python vars"
+    },
+    "Serpiente zip": {
+        "prefix": "zipu",
+        "body": "zipu(${1})",
+        "description": "Built-in function zip"
+    },
+    "Serpiente bool": {
+        "prefix": "buliyani",
+        "body": "buliyani(${1})",
+        "description": "Built-in function bool"
+    },
+    "Serpiente bytearray": {
+        "prefix": "bayite_areyi",
+        "body": "bayite_areyi",
+        "description": "Python bytearray"
+    },
+    "Serpiente bytes": {
+        "prefix": "bayite",
+        "body": "bayite",
+        "description": "Python bytes"
+    },
+    "Serpiente complex": {
+        "prefix": "kompurekisi",
+        "body": "kompurekisi",
+        "description": "Python complex"
+    },
+    "Serpiente dict": {
+        "prefix": "inkoranyamagambo",
+        "body": "inkoranyamagambo(${1})",
+        "description": "Built-in function dict"
+    },
+    "Serpiente float": {
+        "prefix": "furoti",
+        "body": "furoti(${1})",
+        "description": "Built-in function float"
+    },
+    "Serpiente frozenset": {
+        "prefix": "furozenseti",
+        "body": "furozenseti",
+        "description": "Python frozenset"
+    },
+    "Serpiente int": {
+        "prefix": "umubare_usesuye",
+        "body": "umubare_usesuye(${1})",
+        "description": "Built-in function int"
+    },
+    "Serpiente list": {
+        "prefix": "urutonde",
+        "body": "urutonde(${1})",
+        "description": "Built-in function list"
+    },
+    "Serpiente memoryview": {
+        "prefix": "memori_viyu",
+        "body": "memori_viyu",
+        "description": "Python memoryview"
+    },
+    "Serpiente object": {
+        "prefix": "ikintu",
+        "body": "ikintu(${1})",
+        "description": "Built-in function object"
+    },
+    "Serpiente set": {
+        "prefix": "iseti",
+        "body": "iseti(${1})",
+        "description": "Built-in function set"
+    },
+    "Serpiente str": {
+        "prefix": "amagambo",
+        "body": "amagambo(${1})",
+        "description": "Built-in function str"
+    },
+    "Serpiente tuple": {
+        "prefix": "tupuru",
+        "body": "tupuru(${1})",
+        "description": "Built-in function tuple"
+    },
+    "Serpiente type": {
+        "prefix": "ubwoko",
+        "body": "ubwoko(${1})",
+        "description": "Built-in function type"
+    },
+    "Serpiente Ellipsis": {
+        "prefix": "eripusi",
+        "body": "eripusi",
+        "description": "Python Ellipsis"
+    },
+    "Serpiente NotImplemented": {
+        "prefix": "ntibyashyizweho",
+        "body": "ntibyashyizweho",
+        "description": "Python NotImplemented"
+    },
+    "Serpiente __debug__": {
+        "prefix": "debugu",
+        "body": "debugu",
+        "description": "Python __debug__"
+    },
+    "Serpiente ArithmeticError": {
+        "prefix": "IkosaRyImibare",
+        "body": "IkosaRyImibare",
+        "description": "Python ArithmeticError"
+    },
+    "Serpiente AssertionError": {
+        "prefix": "IkosaRyEmeza",
+        "body": "IkosaRyEmeza",
+        "description": "Python AssertionError"
+    },
+    "Serpiente AttributeError": {
+        "prefix": "IkosaRyIkiranga",
+        "body": "IkosaRyIkiranga",
+        "description": "Python AttributeError"
+    },
+    "Serpiente BaseException": {
+        "prefix": "IcyahaShingiro",
+        "body": "IcyahaShingiro",
+        "description": "Python BaseException"
+    },
+    "Serpiente BaseExceptionGroup": {
+        "prefix": "ItsindaRyIcyahaShingiro",
+        "body": "ItsindaRyIcyahaShingiro",
+        "description": "Python BaseExceptionGroup"
+    },
+    "Serpiente IOError": {
+        "prefix": "IkosaRyIO",
+        "body": "IkosaRyIO",
+        "description": "Python IOError"
+    },
+    "Serpiente ConnectionError": {
+        "prefix": "IkosaRyIhuriro",
+        "body": "IkosaRyIhuriro",
+        "description": "Python ConnectionError"
+    },
+    "Serpiente FileNotFoundError": {
+        "prefix": "IkosaRyIdosiye",
+        "body": "IkosaRyIdosiye",
+        "description": "Python FileNotFoundError"
+    },
+    "Serpiente NameError": {
+        "prefix": "IkosaRyIzina",
+        "body": "IkosaRyIzina",
+        "description": "Python NameError"
+    },
+    "Serpiente TypeError": {
+        "prefix": "IkosaRyUbwoko",
+        "body": "IkosaRyUbwoko",
+        "description": "Python TypeError"
+    },
+    "Serpiente ValueError": {
+        "prefix": "IkosaRyAgaciro",
+        "body": "IkosaRyAgaciro",
+        "description": "Python ValueError"
+    },
+    "Serpiente ZeroDivisionError": {
+        "prefix": "IkosaRyIgapanyuma",
+        "body": "IkosaRyIgapanyuma",
+        "description": "Python ZeroDivisionError"
+    },
+    "Serpiente Exception": {
+        "prefix": "Icyaha",
+        "body": "Icyaha",
+        "description": "Python Exception"
+    },
+    "Serpiente __name__": {
+        "prefix": "__izina__",
+        "body": "__izina__",
+        "description": "Python __name__"
+    }
+}

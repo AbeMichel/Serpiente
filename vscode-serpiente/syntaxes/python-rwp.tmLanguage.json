@@ -1,0 +1,60 @@
+{
+    "scopeName": "source.python-rwp",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#builtins"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "source.python"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.python",
+                    "match": "\\b(ibinyoma|ubusa|ukuri|na|nka|emeza|asinkironi|tegereza|hagarara|ishuri|komeza|rema|siba|icyakora_niba|naho_ubundi|usibye|amaherezo|kuri|kuva|rusange|niba|imura|mu|ni|lambda|si_hafi|si|cyangwa|hita|zamura|garura|gerageza|mugihe|hamwe|tanga)\\b"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.python",
+                    "match": "\\b(mpamo|aiter|byose|anext|icyaricyo_cyose|ascii|bin|hagarika_hano|ihamagaye|inyuguti|uburyo_bwishuri|kumbila|siba_ibiranga|ibiranga|divmod|bara|evail|ekizekiti|sohoka|ayungurura|fomata|fata_ikiranga|isi|fite_ikiranga|hashi|bufasha|hekizadesimali|id|injiza|ni_urugero_rwa|ni_ishuri_ryungirije|itera|uburebure|ibyaha|mapu|kinini|gito|ukurikiyeho|okita|fungura|odi|imbaraga|andika|umwihariko|reka|intera|repuru|subira_inyuma|gereranya|shyiraho_ikiranga|isila|tonda|uburyo_budahinduka|teranya|hejuru|vasi|zipu|buliyani|bayite_areyi|bayite|kompurekisi|inkoranyamagambo|furoti|furozenseti|umubare_usesuye|urutonde|memori_viyu|ikintu|iseti|amagambo|tupuru|ubwoko|eripusi|ntibyashyizweho|debugu|IkosaRyImibare|IkosaRyEmeza|IkosaRyIkiranga|IcyahaShingiro|ItsindaRyIcyahaShingiro|IkosaRyIO|IkosaRyIhuriro|IkosaRyIdosiye|IkosaRyIzina|IkosaRyUbwoko|IkosaRyAgaciro|IkosaRyIgapanyuma|Icyaha|__izina__)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.python",
+                    "begin": "\"",
+                    "end": "\""
+                },
+                {
+                    "name": "string.quoted.single.python",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.python",
+                    "match": "#.*$"
+                }
+            ]
+        }
+    }
+}

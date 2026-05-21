@@ -1,0 +1,20 @@
+# Ejemplo aislado en Español
+definir fibonacci(n):
+    a, b = 0, 1
+    resultado = []
+    mientras a < n:
+        resultado.append(a)
+        a, b = b, a + b
+    retornar resultado
+
+numeros = fibonacci(50)
+imprimir(f"Secuencia de Fibonacci hasta 50: {numeros}")
+
+para i en rango(5):
+    imprimir(f"Contando: {i}")
+
+si longitud(numeros) > 5:
+    imprimir("La lista es larga.")
+sino:
+    imprimir("La lista es corta.")
+

@@ -12,6 +12,9 @@
         },
         {
             "include": "#comments"
+        },
+        {
+            "include": "source.python"
         }
     ],
     "repository": {
@@ -19,7 +22,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.python",
-                    "match": "\\b(vrai|faux|aucun|et|ou|non|si|sinon|sinonsi|pour|tantque|definir|retourner|importer|en)\\b"
+                    "match": "\\b(faux|aucun|vrai|et|comme|affirmer|asynchrone|attendre|rompre|classe|continuer|definir|supprimer|sinonsi|sinon|excepter|finalement|pour|depuis|global|si|importer|dans|est|lambda|nonlocal|non|ou|passer|lever|retourner|essayer|tantque|avec|produire)\\b"
                 }
             ]
         },
@@ -27,7 +30,7 @@
             "patterns": [
                 {
                     "name": "support.function.builtin.python",
-                    "match": "\\b(afficher|rang)\\b"
+                    "match": "\\b(absolu|aiter|tous|asuivant|quelconque|ascii|bin|point_arret|appelable|chr|methode_classe|compiler|supprimer_attr|dir|divmod|enumerer|eval|exec|quitter|filtrer|formater|obtenir_attr|globaux|a_attr|hachage|aide|hex|id|entree|est_instance|est_sous_classe|iter|longueur|locaux|map|max|min|suivant|oct|ouvrir|ord|puissance|afficher|propriete|quitter_session|rang|repr|inverse|arrondir|definir_attr|tranche|trier|methode_statique|somme|super|variables|compresser|booleen|tableau_octets|octets|complexe|dict|flottant|ensemble_gele|entier|liste|vue_memoire|objet|ensemble|chaine|uplet|type|elipsis|non_implemente|debogage|ErreurArithmetique|ErreurAssertion|ErreurAttribut|ExceptionBase|GroupeExceptionBase|ErreurIOBloquante|ErreurTubeRompu|ErreurTampon|AvertissementBytes|ErreurProcessusFils|ErreurConnexionAvortee|ErreurConnexion|ErreurConnexionRefusee|ErreurConnexionReinitialisee|AvertissementDepreciation|ErreurFinFichier|AvertissementEncodage|ErreurEnvironnement|Exception|GroupeException|ErreurFichierExiste|ErreurFichierNonTrouve|ErreurVirguleFlottante|AvertissementFutur|SortieGenerateur|ErreurIO|ErreurImportation|AvertissementImportation|ErreurIndentation|ErreurIndex|ErreurInterrompue|ErreurEstRepertoire|ErreurCle|InterruptionClavier|ErreurRecherche|ErreurMemoire|ErreurModuleNonTrouve|ErreurNom|ErreurPasRepertoire|ErreurNonImplemente|ErreurOS|ErreurDebordement|AvertissementDepreciationPendante|ErreurPermission|ErreurRechercheProcessus|ErreurFinalisationPython|ErreurRecursion|ErreurReference|AvertissementRessource|ErreurExecution|AvertissementExecution|ArretIterationAsynchrone|ArretIteration|ErreurSyntaxe|AvertissementSyntaxe|ErreurSysteme|SortieSysteme|ErreurTabulation|ErreurTempsDepasse|ErreurType|ErreurNomLocalNonLie|ErreurDecodageUnicode|ErreurEncodageUnicode|ErreurUnicode|ErreurTraductionUnicode|AvertissementUnicode|AvertissementUtilisateur|ErreurValeur|Avertissement|ErreurDivisionParZero)\\b"
                 }
             ]
         },

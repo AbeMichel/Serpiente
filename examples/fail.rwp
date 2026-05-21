@@ -1,0 +1,9 @@
+rema gukora_ikosa():
+    andika("Ngiye gukora ikosa ryo kugabanya na zeru...")
+    umubare = 10 / 0
+
+gerageza:
+    gukora_ikosa()
+usibye IkosaRyIgapanyuma:
+    andika("Nahagaritse ikosa ryo kugabanya na zeru!")
+    zamura IkosaRyAgaciro("Ili ni ikosa nateje nkana")
