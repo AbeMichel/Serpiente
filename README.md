@@ -1,4 +1,4 @@
-# Serpiente 🐍
+# Serpiente
 
 Serpiente allows you to write and run Python scripts using localized keywords and built-ins. It currently supports **Spanish (`.esp`)** and **French (`.frp`)** out of the box.
 
@@ -7,6 +7,12 @@ Serpiente allows you to write and run Python scripts using localized keywords an
 ### 1. CLI Installation
 To install the `serpiente` CLI globally in your environment:
 
+User
+```bash
+pip install .
+```
+
+Developer
 ```bash
 pip install -e .
 ```
@@ -20,7 +26,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Install LSP dependencies
-pip install pygls lsprotocol
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -77,5 +83,5 @@ If you installed using `pip install -e .`, the CLI updates **automatically**.
 
 ### VS Code Extension
 Whenever you add a new language or modify mappings, you must:
-1. Run `python3 scripts/generate_vscode_ext.py`
+1. Run `sh generateExtension.sh`
 2. Restart VS Code or run the command **"Developer: Reload Window"**.

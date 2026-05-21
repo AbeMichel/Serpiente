@@ -1,0 +1,10 @@
+attrs==26.1.0
+cattrs==26.1.0
+jedi==0.20.0
+lsprotocol==2025.0.0
+nodeenv==1.10.0
+parso==0.8.7
+pygls==2.1.1
+pyright==1.1.409
+-e git+https://github.com/AbeMichel/Serpiente.git@3cc4246fa6c728ad76dfa06526996fce53a57e70#egg=serpiente
+typing_extensions==4.15.0
