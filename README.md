@@ -25,20 +25,6 @@ Developer
 pip install -e .
 ```
 
-### 2. Language Server Setup
-The VS Code extension uses a custom Language Server for Intellisense and Diagnostics. You must set up the virtual environment and install dependencies:
-
-```bash
-# Create and activate venv
-python -m venv .venv
-source .venv/bin/activate
-
-# Install LSP dependencies
-pip install -r requirements.txt
-```
-
-## Usage
-
 ### Running Scripts
 Run any localized script directly using the `serpiente` command:
 
@@ -54,40 +40,45 @@ serpiente main.frp  # French
 
 ## VS Code Extension
 
-### 1. Generate the Extension
-Run the generator script to build the extension. This generates syntax highlighting, snippets, and the Language Server client:
+The Serpiente VS Code extension provides localized Python support by acting as a bidirectional proxy for the official Microsoft Python extension (Pylance).
 
-```bash
-python scripts/generate_vscode_ext.py
-```
+### Architecture: Shadow Workspace Proxy
 
-### 2. Install Dependencies
-The extension requires the `vscode-languageclient` Node module:
+Unlike traditional LSPs, Serpiente does not implement its own static analysis engine. Instead, it manages a "Shadow Workspace" and proxies requests to Pylance:
 
-```bash
-cd vscode-serpiente
-npm install
-```
+1.  **Shadow Mirroring**: All localized files (`.esp`, `.frp`, `.rwp`) are translated into standard Python and cached in a hidden `.serpiente_cache/` directory within the workspace.
+2.  **Position Mapping**: A custom translation engine maintains a bidirectional character-offset map for every line. This allows the extension to map positions between localized source code and the translated Python mirror, accounting for keyword length differences.
+3.  **LSP Proxying**: When a user requests Intellisense (Autocomplete, Hover, Go to Definition), the extension:
+    - Maps the cursor position to the shadow Python file.
+    - Queries the Python extension via the VS Code API.
+    - Intercepts the response, remaps the coordinates back to the original file, and localizes any Python keywords in the UI.
+4.  **Diagnostics**: Syntax errors and type warnings detected by Pylance in the shadow files are remapped and displayed as native Serpiente errors.
 
-### 3. Install the Extension
-Ensure `vsce` is installed.
-Ensure `code` is installed as a command. If not `Cmd/Ctrl+Shift+P` and search/select `Shell Command: Install 'code' command in PATH`.
+### Project Structure
 
-**Mac**
-```bash
-sh generateExtension.sh
-```
-**Windows**
-```bash
-generateExtension.bat
-```
+- `serpiente/`: Python core logic and language definitions.
+  - `langs/`: Language mapping definitions (Spanish, French, Kinyarwanda).
+- `vscode-serpiente/`: TypeScript-based VS Code extension.
+  - `src/translator.ts`: Bidirectional translation and mapping engine.
+  - `src/shadowWorkspace.ts`: Cache and file synchronization manager.
+  - `src/providers.ts`: Intellisense proxy implementation.
+  - `src/diagnostics.ts`: Error remapping and reporting.
+- `scripts/generate_vscode_ext.py`: Utility to generate static assets and `mappings.json` for the extension.
 
-## Updating
+### Setup and Development
 
-### CLI
-If you installed using `pip install -e .`, the CLI updates **automatically**.
+1.  Ensure the official Python extension for VS Code is installed.
+2.  Generate extension assets: `python3 scripts/generate_vscode_ext.py`.
+3.  Build and package the extension:
+    ```bash
+    cd vscode-serpiente
+    npm install
+    npm run compile
+    ```
+4.  Launch the extension in VS Code via the `Extension Development Host` (F5) or package it as a `.vsix` file using `vsce package`.
 
-### VS Code Extension
-Whenever you add a new language or modify mappings, you must:
-1. Run `sh generateExtension.sh`
-2. Restart VS Code or run the command **"Developer: Reload Window"**.
+### Updating the Extension
+Whenever you add a new language or modify mappings:
+1. Run `python3 scripts/generate_vscode_ext.py`.
+2. Rebuild the extension (`npm run compile`).
+3. Reload the VS Code window.

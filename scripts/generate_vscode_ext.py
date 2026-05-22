@@ -28,16 +28,29 @@ def generate_extension():
         },
         "license": "MIT",
         "engines": {
-            "vscode": "^1.67.0"
+            "vscode": "^1.75.0"
         },
-        "activationEvents": [
-            "onLanguage:python-esp",
-            "onLanguage:python-frp"
-        ],
-        "main": "./extension.js",
+        "activationEvents": [],
+        "main": "./dist/extension.js",
         "categories": ["Programming Languages"],
         "dependencies": {
-            "vscode-languageclient": "^8.1.0"
+            "vscode-languageclient": "^9.0.1"
+        },
+        "devDependencies": {
+            "@types/node": "^16.11.7",
+            "@types/vscode": "^1.75.0",
+            "typescript": "^4.9.5",
+            "ts-loader": "^9.4.2",
+            "webpack": "^5.75.0",
+            "webpack-cli": "^5.0.1"
+        },
+        "scripts": {
+            "vscode:prepublish": "npm run package",
+            "compile": "webpack",
+            "watch": "webpack --watch",
+            "package": "webpack --mode production --devtool hidden-source-map",
+            "compile-tests": "tsc -p . --outDir out",
+            "watch-tests": "tsc -p . -w --outDir out"
         },
         "contributes": {
             "languages": [],
@@ -46,9 +59,16 @@ def generate_extension():
         }
     }
 
+    all_mappings = {}
+
     for ext, mapping in ext_map.items():
         lang_id = f"python-{ext[1:]}"
         config_path = f"./language-configurations/{lang_id}.json"
+        
+        all_mappings[ext] = {
+            "languageId": lang_id,
+            "mapping": mapping
+        }
 
         package_json["contributes"]["languages"].append({
             "id": lang_id,
@@ -78,98 +98,19 @@ def generate_extension():
     with open(os.path.join(output_dir, "package.json"), "w") as f:
         json.dump(package_json, f, indent=4)
 
-    # 3. Generate .vscodeignore
+    # 3. Generate mappings.json
+    with open(os.path.join(output_dir, "mappings.json"), "w") as f:
+        json.dump(all_mappings, f, indent=4)
+
+    # 4. Generate .vscodeignore
     with open(os.path.join(output_dir, ".vscodeignore"), "w") as f:
-        f.write(".vscode-test\n.git\n.gitignore\n.vscode\n*.vsix\n")
+        f.write(".vscode-test\n.git\n.gitignore\n.vscode\n*.vsix\nsrc\ntsconfig.json\nwebpack.config.js\n")
 
     # 5. Generate a basic LICENSE file
     with open(os.path.join(output_dir, "LICENSE"), "w") as f:
         f.write("MIT License\n\nCopyright (c) 2026\n")
 
-    # 6. Generate extension.js (LSP Client)
-    generate_extension_js(os.path.join(output_dir, "extension.js"))
-
-    print(f"Extension generated in {output_dir}/")
-
-def generate_extension_js(output_path):
-    js_content = """
-const { LanguageClient } = require('vscode-languageclient/node');
-const vscode = require('vscode');
-const path = require('path');
-const os = require('os');
-const fs = require('fs');
-
-let client;
-
-function activate(context) {
-    console.log('Serpiente extension activating...');
-
-    const workspaceFolders = vscode.workspace.workspaceFolders;
-    if (!workspaceFolders) {
-        console.log('No workspace folder found.');
-        return;
-    }
-
-    const projectRoot = workspaceFolders[0].uri.fsPath;
-    const isWindows = os.platform() === 'win32';
-    const pythonBinary = isWindows ? 'Scripts/python.exe' : 'bin/python';
-    
-    // 1. Try workspace .venv
-    let pythonPath = path.join(projectRoot, '.venv', pythonBinary);
-    
-    // 2. Fallback to a hardcoded path for the developer environment
-    if (!fs.existsSync(pythonPath)) {
-        pythonPath = '/Users/abrahammichel/Projects/Serpiente/.venv/bin/python';
-    }
-
-    const serverPath = path.join(projectRoot, 'serpiente', 'lsp.py');
-
-    console.log('Using Python:', pythonPath);
-    console.log('Using Server:', serverPath);
-
-    if (!fs.existsSync(pythonPath)) {
-        vscode.window.showErrorMessage(`Serpiente: Could not find Python venv at ${pythonPath}`);
-        return;
-    }
-
-    const serverOptions = {
-        command: pythonPath,
-        args: [serverPath],
-    };
-
-    const clientOptions = {
-        documentSelector: [
-            { scheme: 'file', language: 'python-esp' },
-            { scheme: 'file', language: 'python-frp' }
-        ],
-    };
-
-    client = new LanguageClient(
-        'serpienteLSP',
-        'Serpiente Language Server',
-        serverOptions,
-        clientOptions
-    );
-
-    client.start().catch(err => {
-        console.error('Failed to start Serpiente LSP:', err);
-    });
-}
-
-function deactivate() {
-    if (!client) {
-        return undefined;
-    }
-    return client.stop();
-}
-
-module.exports = {
-    activate,
-    deactivate
-};
-"""
-    with open(output_path, "w") as f:
-        f.write(js_content.strip())
+    print(f"Extension static assets generated in {output_dir}/")
 
 def generate_grammar(output_path, lang_id, mapping):
     # Basic grammar that highlights localized keywords

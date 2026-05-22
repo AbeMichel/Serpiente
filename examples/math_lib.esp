@@ -1,5 +1,7 @@
-definir sumar(a, b):
+definir sumar(a: entero, b: entero) -> entero:
     retornar a + b
 
 definir multiplicar(a, b):
     retornar a * b
+
+imprimir(sumar(1, 2
