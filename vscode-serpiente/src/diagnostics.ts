@@ -44,7 +44,15 @@ export class DiagnosticsProxy {
         const diagnostics = vscode.languages.getDiagnostics(shadowUri);
         console.log(`Found ${diagnostics.length} diagnostics for ${shadowUri.fsPath}`);
 
-        const document = await vscode.workspace.openTextDocument(originalUri);
+        // Only remap if the original document is still open in the workspace.
+        // Using openTextDocument here can "resurrect" a document that is being closed,
+        // which causes "object is disposed" errors in Pylance and the extension host.
+        const document = vscode.workspace.textDocuments.find(d => d.uri.toString() === originalUri.toString());
+        if (!document) {
+            console.log(`Original document ${originalUri.fsPath} is no longer open, skipping diagnostic update.`);
+            return;
+        }
+
         const lineContents = document.getText().split(/\r?\n/);
         const ext = path.extname(originalUri.fsPath);
 

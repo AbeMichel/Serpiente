@@ -6,3 +6,4 @@ definir saluer(nom):
 definir calculer_total(prix, quantite):
     total = sumar(prix, 0) # Just using sumar from Spanish for demo
     retourner total * quantite
+

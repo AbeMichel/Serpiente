@@ -29,6 +29,25 @@ export async function activate(context: vscode.ExtensionContext) {
     };
 
     context.subscriptions.push(
+        vscode.commands.registerCommand('serpiente.toggleShadowFiles', async () => {
+            const config = vscode.workspace.getConfiguration('serpiente');
+            const current = config.get<boolean>('showShadowFiles', false);
+            const newValue = !current;
+            await config.update('showShadowFiles', newValue, vscode.ConfigurationTarget.Global);
+            
+            if (newValue) {
+                vscode.window.showInformationMessage('Serpiente: Shadow files enabled (check Secondary Side Bar).');
+                const editor = vscode.window.activeTextEditor;
+                if (editor && selector.some(s => s.language === editor.document.languageId)) {
+                    await shadowManager.mirrorActiveEditor(editor);
+                }
+            } else {
+                vscode.window.showInformationMessage('Serpiente: Shadow files hidden.');
+                await shadowManager.closeAllShadowEditors();
+                await vscode.commands.executeCommand('workbench.action.closeSecondarySideBar');
+            }
+        }),
+
         vscode.languages.registerCompletionItemProvider(selector, new SerpienteCompletionProvider(translator)),
         vscode.languages.registerHoverProvider(selector, new SerpienteHoverProvider(translator)),
         vscode.languages.registerDefinitionProvider(selector, new SerpienteDefinitionProvider(translator)),
@@ -36,6 +55,33 @@ export async function activate(context: vscode.ExtensionContext) {
         vscode.workspace.onDidChangeTextDocument(async e => {
             if (selector.some(s => s.language === e.document.languageId)) {
                 await shadowManager.syncIncremental(e);
+            }
+        }),
+
+        vscode.window.onDidChangeActiveTextEditor(async editor => {
+            if (editor && selector.some(s => s.language === editor.document.languageId)) {
+                await shadowManager.mirrorActiveEditor(editor);
+            }
+        }),
+
+        vscode.window.tabGroups.onDidChangeTabs(async e => {
+            for (const closedTab of e.closed) {
+                if (closedTab.input instanceof vscode.TabInputText) {
+                    const uri = closedTab.input.uri;
+                    // Check if the closed tab was an original file
+                    const doc = vscode.workspace.textDocuments.find(d => d.uri.toString() === uri.toString());
+                    if (doc && selector.some(s => s.language === doc.languageId)) {
+                        console.log(`Original file tab closed: ${uri.fsPath}`);
+                        diagnosticsProxy.delete(uri);
+                        await shadowManager.closeShadowEditor(uri);
+                        shadowManager.handleDidClose(uri);
+                    } 
+                    // Check if it was a shadow file
+                    else if (uri.fsPath.includes('.serpiente_cache')) {
+                        console.log(`Shadow file tab closed: ${uri.fsPath}`);
+                        shadowManager.handleShadowDidClose(uri);
+                    }
+                }
             }
         }),
 
@@ -47,16 +93,20 @@ export async function activate(context: vscode.ExtensionContext) {
                 }
             }
         }),
-        vscode.workspace.onDidDeleteFiles(e => {
+        vscode.workspace.onDidDeleteFiles(async e => {
             for (const uri of e.files) {
-                shadowManager.deleteShadowFile(uri);
+                await shadowManager.deleteShadowFile(uri);
+            }
+        }),
+        vscode.workspace.onDidRenameFiles(async e => {
+            for (const { oldUri, newUri } of e.files) {
+                await shadowManager.renameShadow(oldUri, newUri);
             }
         }),
 
-        vscode.workspace.onDidCloseTextDocument(doc => {
+        vscode.workspace.onDidSaveTextDocument(async doc => {
             if (selector.some(s => s.language === doc.languageId)) {
-                diagnosticsProxy.delete(doc.uri);
-                shadowManager.handleDidClose(doc.uri);
+                await shadowManager.saveShadowFile(doc.uri);
             }
         })
     );
